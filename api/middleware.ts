@@ -1,7 +1,7 @@
-import { ErrorMessages } from "../contracts/constants.ts";
+import { ErrorMessages } from "../contracts/constants";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
-import type { TrpcContext } from "./context.ts";
+import type { TrpcContext } from "./context";
 
 const t = initTRPC.context<TrpcContext>().create({
   transformer: superjson,

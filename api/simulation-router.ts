@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { createRouter, authedQuery, adminQuery } from "./middleware.ts";
-import { getDb } from "./queries/connection.ts";
-import { simulations, users } from "../db/schema.ts";
+import { createRouter, authedQuery, adminQuery } from "./middleware";
+import { getDb } from "./queries/connection";
+import { simulations, users } from "../db/schema";
 import { eq, and, desc } from "drizzle-orm";
 
 // Simulated AI question generation - in production, this would call an LLM API
@@ -114,7 +114,7 @@ export const simulationRouter = createRouter({
       }
 
       // Get subject name
-      const { subjects } = await import("../db/schema.ts");
+      const { subjects } = await import("../db/schema");
       const subjectResults = await db
         .select()
         .from(subjects)

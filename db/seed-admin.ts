@@ -1,7 +1,7 @@
-import { getDb } from "../api/queries/connection.ts";
-import { users } from "./schema.ts";
+import { getDb } from "../api/queries/connection";
+import { users } from "./schema";
 import { eq } from "drizzle-orm";
-import { hashPassword } from "../api/lib/password.ts";
+import { hashPassword } from "../api/lib/password";
 
 async function seedAdmin() {
   const db = getDb();
