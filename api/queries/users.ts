@@ -1,8 +1,8 @@
 import { eq } from "drizzle-orm";
-import * as schema from "@db/schema";
-import type { InsertUser } from "@db/schema";
-import { getDb } from "./connection";
-import { env } from "../lib/env";
+import * as schema from "../../db/schema.ts";
+import type { InsertUser } from "../../db/schema.ts";
+import { getDb } from "./connection.ts";
+import { env } from "../lib/env.ts";
 
 export async function findUserById(id: number) {
   const rows = await getDb()

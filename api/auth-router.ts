@@ -1,13 +1,12 @@
 import { z } from "zod";
 import * as cookie from "cookie";
-import { Session } from "@contracts/constants";
-import { getSessionCookieOptions } from "./lib/cookies";
-import { createRouter, publicQuery, authedQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { users } from "@db/schema";
-import { eq } from "drizzle-orm";
-import { hashPassword, verifyPassword } from "./lib/password";
-import { env } from "./lib/env";
+import { Session } from "../contracts/constants.ts";
+import { getSessionCookieOptions } from "./lib/cookies.ts";
+import { createRouter, publicQuery, authedQuery } from "./middleware.ts";
+import { getDb } from "./queries/connection.ts";
+import { users } from "../db/schema.ts";
+import { hashPassword, verifyPassword } from "./lib/password.ts";
+import { env } from "./lib/env.ts";
 import { SignJWT } from "jose";
 
 export const authRouter = createRouter({

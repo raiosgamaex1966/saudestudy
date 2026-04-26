@@ -1,8 +1,8 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-import { env } from "../lib/env";
-import * as schema from "@db/schema";
-import * as relations from "@db/relations";
+import { env } from "../lib/env.ts";
+import * as schema from "../../db/schema.ts";
+import * as relations from "../../db/relations.ts";
 
 const fullSchema = { ...schema, ...relations };
 

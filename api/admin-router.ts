@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { createRouter, adminQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { users, simulations, attempts, materials, apiKeys } from "@db/schema";
+import { createRouter, adminQuery } from "./middleware.ts";
+import { getDb } from "./queries/connection.ts";
+import { users, simulations, attempts, materials, apiKeys } from "../db/schema.ts";
 import { eq, desc, count } from "drizzle-orm";
 
 export const adminRouter = createRouter({

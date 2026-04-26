@@ -1,12 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
-import { env } from "./env";
-import { getDb } from "../queries/connection";
-import { users } from "@db/schema";
+import { env } from "./env.ts";
+import { getDb } from "../queries/connection.ts";
+import { users } from "../../db/schema.ts";
 import { eq } from "drizzle-orm";
-import type { User } from "@db/schema";
+import type { User } from "../../db/schema.ts";
 import { jwtVerify } from "jose";
 import * as cookie from "cookie";
-import { Session } from "@contracts/constants";
+import { Session } from "../../contracts/constants.ts";
 
 const supabase = createClient(env.supabaseUrl, env.supabaseServiceKey);
 

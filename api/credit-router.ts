@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { createRouter, authedQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { users, creditTransactions } from "@db/schema";
+import { createRouter, authedQuery } from "./middleware.ts";
+import { getDb } from "./queries/connection.ts";
+import { users, creditTransactions } from "../db/schema.ts";
 import { eq, desc } from "drizzle-orm";
 
 export const creditRouter = createRouter({
