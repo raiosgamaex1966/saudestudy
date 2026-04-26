@@ -1,6 +1,6 @@
-import { getDb } from "../api/queries/connection";
+import { getDb } from "../api-src/queries/connection";
 import { subjects, users } from "./schema";
-import { hashPassword } from "../api/lib/password";
+import { hashPassword } from "../api-src/lib/password";
 import { eq } from "drizzle-orm";
 
 async function seed() {
