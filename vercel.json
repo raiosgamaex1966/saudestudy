@@ -4,12 +4,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "functions": {
-    "server.ts": {
+    "api/server.ts": {
       "maxDuration": 30
     }
   },
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/server" },
-    { "source": "/:path*",    "destination": "/index.html" }
+    { "source": "/api/:path*", "destination": "/api/server" },
+    { "source": "/:path*",     "destination": "/index.html" }
   ]
 }
