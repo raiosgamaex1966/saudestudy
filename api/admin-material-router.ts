@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { createRouter, adminQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { materials, subjects } from "../db/schema";
+import { createRouter, adminQuery } from "./middleware.js";
+import { getDb } from "./queries/connection.js";
+import { materials, subjects } from "../db/schema.js";
 import { eq, desc, and } from "drizzle-orm";
 
 export const adminMaterialRouter = createRouter({

@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { createRouter, authedQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { materials, users } from "../db/schema";
+import { createRouter, authedQuery } from "./middleware.js";
+import { getDb } from "./queries/connection.js";
+import { materials, users } from "../db/schema.js";
 import { eq, and, desc } from "drizzle-orm";
 
 export const materialRouter = createRouter({

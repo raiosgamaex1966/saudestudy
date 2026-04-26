@@ -1,12 +1,12 @@
-import { authRouter } from "./auth-router";
-import { subjectRouter } from "./subject-router";
-import { materialRouter } from "./material-router";
-import { simulationRouter } from "./simulation-router";
-import { attemptRouter } from "./attempt-router";
-import { creditRouter } from "./credit-router";
-import { adminRouter } from "./admin-router";
-import { adminMaterialRouter } from "./admin-material-router";
-import { createRouter, publicQuery } from "./middleware";
+import { authRouter } from "./auth-router.js";
+import { subjectRouter } from "./subject-router.js";
+import { materialRouter } from "./material-router.js";
+import { simulationRouter } from "./simulation-router.js";
+import { attemptRouter } from "./attempt-router.js";
+import { creditRouter } from "./credit-router.js";
+import { adminRouter } from "./admin-router.js";
+import { adminMaterialRouter } from "./admin-material-router.js";
+import { createRouter, publicQuery } from "./middleware.js";
 
 export const appRouter = createRouter({
   ping: publicQuery.query(() => ({ ok: true, ts: Date.now() })),

@@ -1,12 +1,12 @@
 import { z } from "zod";
 import * as cookie from "cookie";
-import { Session } from "../contracts/constants";
-import { getSessionCookieOptions } from "./lib/cookies";
-import { createRouter, publicQuery, authedQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { users } from "../db/schema";
-import { hashPassword, verifyPassword } from "./lib/password";
-import { env } from "./lib/env";
+import { Session } from "../contracts/constants.js";
+import { getSessionCookieOptions } from "./lib/cookies.js";
+import { createRouter, publicQuery, authedQuery } from "./middleware.js";
+import { getDb } from "./queries/connection.js";
+import { users } from "../db/schema.js";
+import { hashPassword, verifyPassword } from "./lib/password.js";
+import { env } from "./lib/env.js";
 import { SignJWT } from "jose";
 
 export const authRouter = createRouter({
