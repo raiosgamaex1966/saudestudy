@@ -8,6 +8,7 @@ import { users } from "../db/schema.js";
 import { hashPassword, verifyPassword } from "./lib/password.js";
 import { env } from "./lib/env.js";
 import { SignJWT } from "jose";
+import { eq } from "drizzle-orm";
 
 export const authRouter = createRouter({
   me: authedQuery.query((opts) => opts.ctx.user),
@@ -45,9 +46,9 @@ export const authRouter = createRouter({
         credits: 5,
         plan: "free",
         lastSignInAt: new Date(),
-      });
+      }).returning({ id: users.id });
       
-      return { success: true, id: Number(result[0].insertId) };
+      return { success: true, id: result[0].id };
     }),
 
   // Local login

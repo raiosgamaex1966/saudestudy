@@ -13,8 +13,8 @@ export const attemptRouter = createRouter({
         simulationId: input.simulationId,
         userId: ctx.user.id,
         answers: JSON.stringify([]),
-      });
-      return { id: Number(result[0].insertId) };
+      }).returning({ id: attempts.id });
+      return { id: result[0].id };
     }),
 
   submit: authedQuery

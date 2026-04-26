@@ -36,8 +36,8 @@ export const subjectRouter = createRouter({
       const result = await db.insert(subjects).values({
         ...input,
         createdBy: ctx.user.id,
-      });
-      return { id: Number(result[0].insertId) };
+      }).returning({ id: subjects.id });
+      return { id: result[0].id };
     }),
 
   update: adminQuery

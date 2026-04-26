@@ -64,9 +64,9 @@ export const adminMaterialRouter = createRouter({
         uploadedBy: ctx.user.id,
         isPublic: true,
         isOfficial: true,
-      });
+      }).returning({ id: materials.id });
 
-      return { id: Number(result[0].insertId) };
+      return { id: result[0].id };
     }),
 
   // Toggle material visibility

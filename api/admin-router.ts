@@ -156,9 +156,9 @@ export const adminRouter = createRouter({
         provider: input.provider,
         keyValue: input.keyValue,
         createdBy: ctx.user.id,
-      });
+      }).returning({ id: apiKeys.id });
 
-      return { id: Number(result[0].insertId) };
+      return { id: result[0].id };
     }),
 
   deleteApiKey: adminQuery

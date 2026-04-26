@@ -77,7 +77,7 @@ export const materialRouter = createRouter({
         mimeType: input.mimeType,
         subjectId: input.subjectId,
         uploadedBy: user.id,
-      });
+      }).returning({ id: materials.id });
 
       // Deduct credits
       await db
@@ -86,7 +86,7 @@ export const materialRouter = createRouter({
         .where(eq(users.id, user.id));
 
       return {
-        id: Number(result[0].insertId),
+        id: result[0].id,
         creditsUsed: creditsNeeded,
       };
     }),

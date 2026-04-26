@@ -15,4 +15,5 @@ export const env = {
   supabaseAnonKey: process.env.VITE_SUPABASE_ANON_KEY ?? "",
   supabaseServiceKey: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
   appSecret: process.env.APP_SECRET ?? "saudestudy-secret",
+  ownerUnionId: process.env.OWNER_UNION_ID,
 };
