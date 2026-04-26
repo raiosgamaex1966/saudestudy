@@ -137,7 +137,7 @@ export const simulationRouter = createRouter({
         questions: JSON.stringify(questions),
         config: input.config ? JSON.stringify(input.config) : null,
         creditCost,
-      });
+      }).returning({ id: simulations.id });
 
       // Deduct credits
       await db
@@ -146,7 +146,7 @@ export const simulationRouter = createRouter({
         .where(eq(users.id, user.id));
 
       return {
-        id: Number(result[0].insertId),
+        id: result[0].id,
         questions,
         creditsUsed: creditCost,
       };
@@ -171,8 +171,8 @@ export const simulationRouter = createRouter({
         createdBy: ctx.user.id,
         questions: JSON.stringify(input.questions),
         config: input.config ? JSON.stringify(input.config) : null,
-      });
-      return { id: Number(result[0].insertId) };
+      }).returning({ id: simulations.id });
+      return { id: result[0].id };
     }),
 
   delete: authedQuery
